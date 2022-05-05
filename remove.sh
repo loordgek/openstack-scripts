@@ -4,7 +4,7 @@ function stop-controller-services() {
 
 function remove-common-packages() {
 	apt-get purge chrony -y
-	apt-get purge python-openstackclient -y
+	apt-get purge python3-openstackclient -y
 	ubuntu_version=`lsb_release -sr`
         if [ "$ubuntu_version" == "14.04" ]
         then
@@ -36,13 +36,13 @@ function remove-controller-packages() {
 	apt-get purge mariadb-server python-mysqldb -y
 	apt-get purge rabbitmq-server -y
 	apt-get purge keystone python-keystoneclient -y
-	apt-get purge glance python-glanceclient -y
+	apt-get purge glance python3-glanceclient -y
 	apt-get purge nova-api nova-cert nova-conductor nova-consoleauth \
 	nova-novncproxy nova-scheduler python-novaclient -y
-	apt-get purge neutron-server neutron-plugin-ml2 python-neutronclient neutron-linuxbridge-agent neutron-dhcp-agent -y
+	apt-get purge neutron-server neutron-plugin-ml2 python3-neutronclient neutron-linuxbridge-agent neutron-dhcp-agent -y
 	apt-get purge cinder-api cinder-scheduler python-cinderclient -y
 	apt-get purge openstack-dashboard apache2 libapache2-mod-wsgi \
-	memcached python-memcache -y
+	memcached python3-binary-memcached -y
 	apt-get purge mongodb-server mongodb-clients python-pymongo -y
 	apt-get purge ceilometer-api ceilometer-collector ceilometer-agent-central \
 	ceilometer-agent-notification ceilometer-alarm-evaluator \
