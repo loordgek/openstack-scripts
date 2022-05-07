@@ -63,7 +63,7 @@ function install-controller-packages() {
 	echo "Installing Keystone..."
 	echo "manual" > /etc/init/keystone.override
 	sleep 3
-	apt-get install keystone apache2 libapache2-mod-wsgi memcached python3-binary-memcached -y
+	apt-get install keystone apache2 libapache2-mod-wsgi-py3 memcached python3-binary-memcached -y
 	
 	echo "Installing Glance..."
 	sleep 2
@@ -72,7 +72,7 @@ function install-controller-packages() {
 	echo "Installing Nova for Controller"
 	sleep 2
 	apt-get install nova-api nova-cert nova-conductor nova-consoleauth nova-novncproxy \
-	nova-scheduler nova-placement-api python-novaclient -y
+	nova-scheduler nova-placement-api python-python-novaclient-doc -y
 
 	install-neutron-packages-controller
 	

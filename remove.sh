@@ -38,10 +38,10 @@ function remove-controller-packages() {
 	apt-get purge keystone python-keystoneclient -y
 	apt-get purge glance python3-glanceclient -y
 	apt-get purge nova-api nova-cert nova-conductor nova-consoleauth \
-	nova-novncproxy nova-scheduler python-novaclient -y
+	nova-novncproxy nova-scheduler python-python-novaclient-doc -y
 	apt-get purge neutron-server neutron-plugin-ml2 python3-neutronclient neutron-linuxbridge-agent neutron-dhcp-agent -y
 	apt-get purge cinder-api cinder-scheduler python-cinderclient -y
-	apt-get purge openstack-dashboard apache2 libapache2-mod-wsgi \
+	apt-get purge openstack-dashboard apache2 libapache2-mod-wsgi-py3 \
 	memcached python3-binary-memcached -y
 	apt-get purge mongodb-server mongodb-clients python-pymongo -y
 	apt-get purge ceilometer-api ceilometer-collector ceilometer-agent-central \
