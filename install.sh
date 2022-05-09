@@ -71,8 +71,9 @@ function install-controller-packages() {
 	
 	echo "Installing Nova for Controller"
 	sleep 2
-	apt-get install nova-api nova-cert nova-conductor nova-consoleauth nova-novncproxy \
+	apt-get install nova-api nova-conductor  nova-novncproxy \
 	nova-scheduler placement-api python-novaclient-doc -y
+	#nova-cert nova-consoleauth
 
 	install-neutron-packages-controller
 	
