@@ -72,7 +72,7 @@ function install-controller-packages() {
 	echo "Installing Nova for Controller"
 	sleep 2
 	apt-get install nova-api nova-cert nova-conductor nova-consoleauth nova-novncproxy \
-	nova-scheduler nova-placement-api python-python-novaclient-doc -y
+	nova-scheduler placement-api python-novaclient-doc -y
 
 	install-neutron-packages-controller
 	
@@ -98,7 +98,7 @@ function install-controller-packages() {
 function install-networknode-packages() {
 	echo "About to install Neutron for Network Node..."
 	sleep 2
-	apt-get install neutron-plugin-ml2 neutron-plugin-linuxbridge-agent \
+	apt-get install neutron-plugin-ml2 neutron-linuxbridge-agent \
 	neutron-l3-agent neutron-dhcp-agent neutron-metadata-agent python3-neutronclient conntrack -y
 	apt-get autoremove -y
 }

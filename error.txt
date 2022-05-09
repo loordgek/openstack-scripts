@@ -1,0 +1,7 @@
+install.sh: line 64: /etc/init/keystone.override: No such file or directory
+E: Unable to locate package nova-cert
+E: Unable to locate package nova-consoleauth
+E: Unable to locate package nova-placement-api
+E: Unable to locate package python-python-novaclient-doc
+E: Unable to locate package neutron-plugin-linuxbridge-agent
+E: Unable to locate package neutron-plugin-linuxbridge-agent

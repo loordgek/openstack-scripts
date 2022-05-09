@@ -24,7 +24,7 @@ function remove-compute-packages() {
 	echo "About to remove packages for Compute Node"
 	sleep 2
 	apt-get purge nova-compute sysfsutils -y
-	apt-get purge neutron-plugin-linuxbridge-agent conntrack -y
+	apt-get purge neutron-linuxbridge-agent conntrack -y
 	apt-get purge ceilometer-agent-compute -y
 	apt-get autoremove -y
 }
@@ -38,7 +38,7 @@ function remove-controller-packages() {
 	apt-get purge keystone python-keystoneclient -y
 	apt-get purge glance python3-glanceclient -y
 	apt-get purge nova-api nova-cert nova-conductor nova-consoleauth \
-	nova-novncproxy nova-scheduler python-python-novaclient-doc -y
+	nova-novncproxy nova-scheduler python-novaclient-doc -y
 	apt-get purge neutron-server neutron-plugin-ml2 python3-neutronclient neutron-linuxbridge-agent neutron-dhcp-agent -y
 	apt-get purge cinder-api cinder-scheduler python-cinderclient -y
 	apt-get purge openstack-dashboard apache2 libapache2-mod-wsgi-py3 \

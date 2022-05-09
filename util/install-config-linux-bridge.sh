@@ -6,7 +6,7 @@ fi
 apt-get purge neutron-plugin-openvswitch-agent -y
 apt-get purge openvswitch-switch -y
 apt-get autoremove -y
-apt-get install neutron-plugin-linuxbridge-agent -y
+apt-get install neutron-linuxbridge-agent -y
 sleep 5
 
 if [ ! -z "$3" ]
