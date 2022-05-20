@@ -1,8 +1,8 @@
 controller_host_name="controller"
 
 ### Start - interface related settings
-readonly mgmt_interface="enp0s3"
-readonly data_interface="enp0s8"
+readonly mgmt_interface="enp1s0"
+readonly data_interface="enp1s0"
 ### End - interface related settings
 
 ### Start - Neutron related settings
@@ -111,15 +111,12 @@ function create-api-endpoints() {
 
 function get-ip-address() {
         ip_address_val=''
-        ubuntu_version=`lsb_release -sr`
-        if [ "$ubuntu_version" == "17.04" ]
+        ubuntu_version='lsb_release -sr'
+        if [ "$ubuntu_version" == "22.04" ]
         then
-                ip_address_val=`ifconfig $1 | grep 'inet ' | cut -d' ' -f10 | awk '{ print $1}'`
-        elif [ "$ubuntu_version" == "16.04" ]
-        then
-                ip_address_val=`ifconfig $1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`
+                ip_address_val=`ip addr show $1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
         else
-                echo "This release is supported only on Zesty (17.04) or Xenial (16.04)"
+                echo "This release is supported only on Zesty (22.04)"
                 exit 1;
         fi
         echo $ip_address_val
