@@ -111,7 +111,7 @@ function create-api-endpoints() {
 
 function get-ip-address() {
         ip_address_val=''
-        ubuntu_version='lsb_release -sr'
+        ubuntu_version=`lsb_release -sr`
 		echo $ubuntu_version
         if [ "$ubuntu_version" == "22.04" ]
         then
