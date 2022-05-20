@@ -116,9 +116,11 @@ function get-ip-address() {
         then
                 ip_address_val=`ip addr show $1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
         else
-                echo "This release is supported only on Zesty (22.04)"
+                echo "This release is supported only on(22.04)"
                 exit 1;
         fi
         echo $ip_address_val
 }
+
+get-ip-address
 
