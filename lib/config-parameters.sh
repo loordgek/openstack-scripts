@@ -112,6 +112,7 @@ function create-api-endpoints() {
 function get-ip-address() {
         ip_address_val=''
         ubuntu_version='lsb_release -sr'
+		echo $ubuntu_version
         if [ "$ubuntu_version" == "22.04" ]
         then
                 ip_address_val=`ip addr show $1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
